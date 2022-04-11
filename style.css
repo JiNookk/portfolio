@@ -312,3 +312,107 @@ flex : 수평
 .etc {
   padding: 20px;
 }
+
+.category__btn {
+  border: 1px solid var(--color-dark-white);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  padding: 8px 48px;
+}
+
+.category__btn.active,
+.category__btn:hover {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+}
+
+/* 카테고리 버튼이 액티브인 상태의 카테고리 카운트와
+   카테고리 버튼에 마우스가 올라왔을때 안에있는 카테고리 카운트 일때만 동작 */
+.category__btn.active .category__count,
+.category__btn:hover .category__count {
+  opacity: 1;
+  top: 0;
+}
+
+.category__count {
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  /* span은 기본적으로 안의 내용을 꽉채워서 적용시키기 때문에 
+      inline-block으로 채워주는게 좋다! */
+  display: inline-block;
+  position: relative;
+  /* top을 이용해 위치를 지정할 수 있다. */
+  top: -20px;
+  left: 4px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease;
+}
+
+.work__projects {
+  display: flex;
+  /* wrap : 수평으로 나열된 아이템들이 화면에 꽉차면 아래로 내려가게 해주는 기능 */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: var(--color-light-white);
+}
+
+/* 부모박스의 크기를 넘지않도록 100%할당 */
+.project__img {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.project__description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-black);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* 투명도 지정 */
+  opacity: 0;
+  /* 액티브됐을 때 콤보 : transition ~ 태그.active(아니면 hover) .태그 ~ */
+  transition: all var(--animation-duration) ease-in;
+  /* translateY는 +가 아래방향 */
+  transform: translateY(10px);
+}
+
+.project:hover .project__description {
+  opacity: 0.8;
+  transform: translateY(0px);
+}
+
+/* 클래스 지정을 하지 않은 태그도 부모가 클래스로 묶여있으면
+    이런 식으로 지정이 가능하다! */
+.project__description h3 {
+  color: var(--color-white);
+}
+
+/* h3태그 다음에 간단한 작업을 하고 싶을 때 */
+.project__description h3:after {
+  content: '';
+  display: block;
+  position: relative;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  margin-left: -12px;
+  margin-top: 8px;
+  background-color: var(--color-dark-white);
+}
