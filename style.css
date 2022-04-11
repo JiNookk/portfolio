@@ -47,6 +47,16 @@ body {
   cursor: default;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* Typography */
 h1 {
   font-size: var(--font-large);
@@ -155,9 +165,15 @@ button {
 .section {
   padding: 50px;
   text-align: center;
-  /* 최대로 커질 수 있는 너비 */
-  max-width: 1200px;
+
   /* text-align으로 가운데 정렬이 안될 경우를 대비해 margin을 양옆에 동일하게 분배 */
+  margin: auto;
+}
+
+.section__container {
+  /* 최대로 커질 수 있는 너비 
+  이렇게 따로 빼서 써야 배경색 지정시 문제가 발생하지 않는다.*/
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -211,7 +227,7 @@ button {
 }
 
 .about__jobs {
-  margin-top: 80px;
+  margin: 80px 0;
 }
 /* 원래 div태그의 기본값 : 수직
 flex : 수평
@@ -232,4 +248,67 @@ flex : 수평
 
 .job__period {
   font-size: var(--font-micro);
+}
+
+#skills {
+  background-color: var(--color-yellow);
+}
+
+/* 개발자 도구를 들어가 보면 사이즈가 작아서 옆으로 안퍼지는지 
+마진때문에 옆으로 안퍼지는지 확인할 수 있다. 마진 : 분홍, 사이즈 : 파랑 */
+.skillset {
+  display: flex;
+  background-color: var(--color-light-grey);
+  color: var(--color-light-white);
+  /* 밸류값줄때 절대 ,넣지말것!!!! */
+  margin: 20px 0;
+}
+
+/* 사이즈가 남은 요소들의 위치를 퍼뜨리기 위한 코드 */
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  /* 박스 내부 개체들의 간격을 띄울때 : padding
+  박스의 간격을 띄울 때 : margin */
+  padding: 20px 40px;
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-grey);
+}
+
+.skillset__title {
+  color: var(--color-light-white);
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+
+.skill {
+  margin-bottom: 32px;
+}
+
+.skill__value {
+  /* 요놈은 html태그안에서 각각 정의되야 한다. 
+  나중에는 JS로 동적처리할 것임. */
+  /* width: 70%; */
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.tools,
+.etc {
+  padding: 20px;
 }
