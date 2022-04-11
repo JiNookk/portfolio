@@ -27,8 +27,12 @@ css에서 변수를 지정해주는 작업 */
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+
   /* Size */
   --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 300ms;
 }
 
 /* Universal tags 
@@ -145,4 +149,87 @@ button {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+/* Section common  */
+.section {
+  padding: 50px;
+  text-align: center;
+  /* 최대로 커질 수 있는 너비 */
+  max-width: 1200px;
+  /* text-align으로 가운데 정렬이 안될 경우를 대비해 margin을 양옆에 동일하게 분배 */
+  margin: auto;
+}
+
+/* About */
+.about__majors {
+  /* 플렉스 박스는 기본적으로 수평정렬 */
+  display: flex;
+  /* 등간격의 기본축 정렬을 하고 싶을때 */
+  justify-content: space-between;
+  margin: 80px, 0;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  /* line-height을 높이만큼 주게되면 요소가 중간에 오게 된다.; */
+  line-height: 170px;
+  /* 만들면서 확인하기 어렵기 때문에 색지정해서 영역확인하면 좋다! */
+  /* background-color: yellow; */
+  font-size: 70px;
+  /* 개발자도구를 이용해서 마우스를 대보면 margin이 분홍색으로 표시된다!
+  치우쳐진 마진을 발견하면 margin : auto를  쓸것 */
+  margin: auto;
+  color: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+/* 마우스를 가져다 댈때 동작을 원한다면 hover */
+/* major icon이 아닌 i개체(아이콘)에 올라갔을 때 반응을 원하면 i도 추가
+    이렇게하면 안의 회전, 확대도 아이콘에서만 발생 */
+.major__icon:hover i {
+  color: var(--color-pink);
+  /* 가져다 댈때 회전과 확대가 발생 */
+  transform: rotate(-30deg) scale(1.2);
+}
+
+.major__icon i {
+  /* 애니메이션은 300ms가 딱이야! 아니면 너무 빠르거나 답답 */
+  transition: all var(--animation-duration) ease;
+}
+
+.about__jobs {
+  margin-top: 80px;
+}
+/* 원래 div태그의 기본값 : 수직
+flex : 수평
+>> 이 두개를 잘 조합해서 우리가 원하는것을 버무려야 한다. */
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name {
+  font-size: var(--font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
 }
