@@ -212,8 +212,8 @@ button {
   font-size: var(--font-small);
 }
 
-/* 마우스를 가져다 댈때 동작을 원한다면 hover */
-/* major icon이 아닌 i개체(아이콘)에 올라갔을 때 반응을 원하면 i도 추가
+/* 마우스를 가져다 댈때 동작을 원한다면 hover
+major icon이 아닌 i개체(아이콘)에 올라갔을 때 반응을 원하면 i도 추가
     이렇게하면 안의 회전, 확대도 아이콘에서만 발생 */
 .major__icon:hover i {
   color: var(--color-pink);
@@ -326,9 +326,23 @@ flex : 수평
   color: var(--color-white);
 }
 
-/* 카테고리 버튼이 액티브인 상태의 카테고리 카운트와
-   카테고리 버튼에 마우스가 올라왔을때 안에있는 카테고리 카운트 일때만 동작 */
-.category__btn.active .category__count,
+카테고리
+  버튼이
+  액티브인
+  상태의
+  카테고리
+  카운트와
+  카테고리
+  버튼에
+  마우스가
+  올라왔을때
+  안에있는
+  카테고리
+  카운트
+  일때만
+  동작
+  .category__btn.active
+  .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
@@ -404,8 +418,7 @@ flex : 수평
   color: var(--color-white);
 }
 
-/* h3태그 다음에 간단한 작업을 하고 싶을 때 */
-.project__description h3:after {
+h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h3:after {
   content: '';
   display: block;
   position: relative;
@@ -415,4 +428,48 @@ flex : 수평
   margin-left: -12px;
   margin-top: 8px;
   background-color: var(--color-dark-white);
+}
+
+#testimonials {
+  background-color: var(--color-light-white);
+}
+
+.testimonials {
+  margin: 40px;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+/* 이미지 크기 : 그냥 픽셀값을 지정해줌. %말고 */
+.testimonial__avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
+}
+
+.testimonial__speech-bubble {
+  padding: 18px;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+  width: 100%;
+  height: 150px;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.name a {
+  color: var(--color-pink);
 }
