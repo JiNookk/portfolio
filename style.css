@@ -66,7 +66,7 @@ h1 {
 }
 
 h2 {
-  font-size: var (--font-regular);
+  font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0;
@@ -326,7 +326,7 @@ flex : 수평
   color: var(--color-white);
 }
 
-카테고리
+/* 카테고리
   버튼이
   액티브인
   상태의
@@ -340,9 +340,8 @@ flex : 수평
   카테고리
   카운트
   일때만
-  동작
-  .category__btn.active
-  .category__count,
+  동작 */
+.category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
@@ -452,6 +451,7 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
   height: 150px;
 }
 
+/* 클래스 태그가 여러개 중복 될 경우 홀, 짝수를 구분하는 코드 */
 .testimonial__avatar:nth-child(odd) {
   margin-right: 40px;
 }
@@ -472,4 +472,27 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
 
 .name a {
   color: var(--color-pink);
+}
+
+#contact {
+  background-color: var(--color-pink);
+  justify-content: space-between;
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+  margin: 20px;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px, 0;
+}
+
+/* i: hover와 hover i랑 다르니깐 꼭 순서 기억하기!! */
+.contact__links i:hover {
+  transform: rotate(-30deg) scale(1.2);
+  color: var(--color-yellow);
 }
