@@ -460,6 +460,8 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
   margin-left: 40px;
 }
 
+/* 안의 내용이 무한하게 늘어나는 이유 : max-width를 적용시키지 않았기 때문이다.
+    따라서 section container를 적용시켜주면 해결됨! */
 .testimonial__speech-bubble {
   padding: 18px;
   background-color: var(--color-white);
@@ -496,3 +498,6 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
   transform: rotate(-30deg) scale(1.2);
   color: var(--color-yellow);
 }
+
+/* 우리가 화면을 최대로 키웠을 때 박스가 끝까지 늘어나는 것을 멈추려면?
+  max-width를 준다! >> container까지 해서 준다*/

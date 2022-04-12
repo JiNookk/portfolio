@@ -39,23 +39,27 @@
     </nav>
     <!-- Home -->
     <section id="home">
-      <!-- src : 상대경로, alt : 설명 -->
-      <img
-        src="imgs/profile.jpg"
-        alt="Wook's profile photo"
-        class="home__avatar"
-      />
-      <h1 class="home__title">
-        <!-- br태그 : 줄바꿈 태그 -->
-        Hello,<br />
-        I'm Optimal Coder
-      </h1>
-      <h2 class="home__description">A flawless Frontend Developer using TDD</h2>
-      <button class="home__contact">Contact Me</button>
+      <div class="section__container">
+<!-- src : 상대경로, alt : 설명 -->
+<img
+src="imgs/profile.jpg"
+alt="Wook's profile photo"
+class="home__avatar"
+/>
+<h1 class="home__title">
+<!-- br태그 : 줄바꿈 태그 -->
+Hello,<br />
+I'm Optimal Coder
+</h1>
+<h2 class="home__description">A flawless Frontend Developer using TDD</h2>
+<button class="home__contact">Contact Me</button>
+      </div>
+      
     </section>
     <!-- About -->
     <section id="about" class="section">
-      <!-- h1 : 메인 제목
+      <div class="section__container">
+        <!-- h1 : 메인 제목
     h2 : 소제목
     p : 세부설명 -->
       <h1>About me</h1>
@@ -122,10 +126,13 @@
             
          
       </div>
+      </div>
+      
     </section>
 
     <!-- Skills -->
     <section id="skills" class="section">
+      
       <div class="section__container">
 
       <h1>Skills</h1>
@@ -226,153 +233,159 @@
     </section>
     <!-- Work -->
     <section id="work" class="section">
-      <h1>My work</h1>
-      <h4>Projects</h4>
-      <div class="work__categories">
-        <button class="category__btn active">
-          All <span class="category__count">8</span>
-        </button>
-        <button class="category__btn">
-          Front-end <span class="category__count">3</span>
-        </button>
-        <button class="category__btn">
-          Back-end <span class="category__count">3</span>
-        </button>
-        <button class="category__btn">
-          Mobile <span class="category__count">2</span>
-        </button>
+      <div class="section__container">
+        <h1>My work</h1>
+        <h4>Projects</h4>
+        <div class="work__categories">
+          <button class="category__btn active">
+            All <span class="category__count">8</span>
+          </button>
+          <button class="category__btn">
+            Front-end <span class="category__count">3</span>
+          </button>
+          <button class="category__btn">
+            Back-end <span class="category__count">3</span>
+          </button>
+          <button class="category__btn">
+            Mobile <span class="category__count">2</span>
+          </button>
+        </div>
+        <div class="work__projects">
+          <!-- 이미지크기 조정 : image reize, png compression -->
+          <a
+            href=""
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project1.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Youtube Sites</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/jjing970828/portfolio"
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project2.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Responsive Navbar</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/jjing970828/portfolio"
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project3.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Health Sites</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/jjing970828/portfolio"
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project4.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Business Sites</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/jjing970828/portfolio"
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project5.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Insurance Sites</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/jjing970828/portfolio"
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project6.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Orange Sites</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/jjing970828/portfolio"
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project7.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Stock Sites</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/jjing970828/portfolio"
+            class="project"
+            target="blank"
+          >
+            <img src="imgs/works/project8.png" alt="Youtube" class = "project__img"/>
+            <div class="project__description">
+              <h3>Photo Sites</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+        </div>
       </div>
-      <div class="work__projects">
-        <!-- 이미지크기 조정 : image reize, png compression -->
-        <a
-          href=""
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project1.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Youtube Sites</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-        <a
-          href="https://github.com/jjing970828/portfolio"
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project2.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Responsive Navbar</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-        <a
-          href="https://github.com/jjing970828/portfolio"
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project3.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Health Sites</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-        <a
-          href="https://github.com/jjing970828/portfolio"
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project4.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Business Sites</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-        <a
-          href="https://github.com/jjing970828/portfolio"
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project5.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Insurance Sites</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-        <a
-          href="https://github.com/jjing970828/portfolio"
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project6.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Orange Sites</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-        <a
-          href="https://github.com/jjing970828/portfolio"
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project7.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Stock Sites</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-        <a
-          href="https://github.com/jjing970828/portfolio"
-          class="project"
-          target="blank"
-        >
-          <img src="imgs/works/project8.png" alt="Youtube" class = "project__img"/>
-          <div class="project__description">
-            <h3>Photo Sites</h3>
-            <span>Clone coding with HTML and CSS</span>
-          </div>
-        </a>
-      </div>
+      
     </section>
     <!-- testimonials -->
     <section id="testimonials" class="section">
-      <h1>Testimonials</h1>
-      <h3>See what they say about me</h3>
-      <div class="testimonials">
-        <div class="testimonial">
-          <img
+      <div class="section__container">
+        <h1>Testimonials</h1>
+        <h3>See what they say about me</h3>
+        <div class="testimonials">
+          <div class="testimonial">
+            <img
+              src="imgs/testimonial.jpg"
+              alt="People"
+              class="testimonial__avatar"
+            />
+            <div class="testimonial__speech-bubble">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores,
+                maiores minus iusto rerum voluptatum dolor suscipit iure itaque
+                voluptatibus repudiandae, eius cumque molestiae in totam nesciunt
+                error, nobis eum. Est.
+              </p>
+              <p class="name"><a href="">SangRok </a>/ Pnu</p>
+            </div>
+          </div>
+          <div class="testimonial">
+           
+            <div class="testimonial__speech-bubble">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores,
+                maiores minus iusto rerum voluptatum dolor suscipit iure itaque
+                voluptatibus repudiandae, eius cumque molestiae in totam nesciunt
+                error, nobis eum. Est.
+              </p>
+              <p class="name"><a href="">Ellie </a>/ DreamCoding</p>
+            </div>
+            <img
             src="imgs/testimonial.jpg"
             alt="People"
             class="testimonial__avatar"
           />
-          <div class="testimonial__speech-bubble">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores,
-              maiores minus iusto rerum voluptatum dolor suscipit iure itaque
-              voluptatibus repudiandae, eius cumque molestiae in totam nesciunt
-              error, nobis eum. Est.
-            </p>
-            <p class="name"><a href="">SangRok </a>/ Pnu</p>
           </div>
-        </div>
-        <div class="testimonial">
-         
-          <div class="testimonial__speech-bubble">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores,
-              maiores minus iusto rerum voluptatum dolor suscipit iure itaque
-              voluptatibus repudiandae, eius cumque molestiae in totam nesciunt
-              error, nobis eum. Est.
-            </p>
-            <p class="name"><a href="">Ellie </a>/ DreamCoding</p>
-          </div>
-          <img
-          src="imgs/testimonial.jpg"
-          alt="People"
-          class="testimonial__avatar"
-        />
         </div>
       </div>
+      
     </section>
     <!-- Contact -->
     <section id="contact" class="section">
