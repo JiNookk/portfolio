@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/9e1b8622c7.js"
       crossorigin="anonymous"
     ></script>
+    <script defer src="main.js"></script>
   </head>
   <body>
     <!-- BEM을 지켜서 코딩하는것을 볼 수 있다. -->
@@ -23,7 +24,6 @@
         <!-- a : 앵커태그 -->
         <a href="#">wooks</a>
       </div>
-
       <ul class="navbar__menu">
         <li class="navbar__menu__item active">Home</li>
         <li class="navbar__menu__item">About</li>
@@ -417,5 +417,20 @@
         2020 Dream Coding Wooks - All right reserved
       </p>
     </section>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById('navbar').style.background = '#501e27';
+        } else {
+          document.getElementById('navbar').style.background = 'none';
+        }
+      }
+    </script>
   </body>
 </html>
