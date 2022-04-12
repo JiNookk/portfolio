@@ -129,6 +129,15 @@ button {
   background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  right: 38px;
+  font-size: 24px;
+  color: var(--color-white);
+  /* 평소엔 없다가 화면이 작아지면 미디어쿼리로 구현해야 하므로 display : none */
+  display: none;
+}
+
 /* Home */
 #home {
   /* 홈 섹션의 배경 전체를 설정 */
@@ -501,3 +510,53 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
 
 /* 우리가 화면을 최대로 키웠을 때 박스가 끝까지 늘어나는 것을 멈추려면?
   max-width를 준다! >> container까지 해서 준다*/
+
+/* 토글에 관한내용은 반응형 내용이므로 미디어 쿼리구문 안에서 
+    적는게 맞지 않나? >> 미디어 쿼리 안에서는 최소한의 내용만
+    들어가야 한다. 
+    가능하면 스타일링과 관련된 내용은 본문에서 만들고 
+    차이점만 미디어 쿼리 내부에서 구현하기 */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* 중앙으로 왜 안올까?
+      개발자 도구로 확인 >> 마진이 없다면 사이즈를 100%로 늘리기 */
+  /* width : 100%인데 적용 안될때 ? >> 부모태그의 사이즈를 초과할수 없기 때문
+          부모 태그에도 width를 100%주던가 중복된 부모태그를 없애면 해결.
+          >> 쓸데없는 중복은 잘 제거하도록 하자! */
+  .navbar__menu {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    /* 화면을 가득채우는 flex구문 */
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
