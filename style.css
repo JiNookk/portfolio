@@ -101,10 +101,12 @@ button {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
   align-items: center;
   padding: 16px;
+  background-color: transparent;
   transition: all var(--animation-duration) ease-in-out;
+  /* 가장 상위에 둘 우선순위를 지정 */
+  z-index: 1;
 }
 
 #navbar.navbar--dark {
