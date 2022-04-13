@@ -16,7 +16,6 @@ document.addEventListener('scroll', () => {
 });
 
 // Handle scrolling when tapping on the navbar menu
-
 const navbarMenu = document.querySelector('.navbar__menu');
 
 // navbarMenu에서 클릭이 발생하면 콜백실행
@@ -34,9 +33,20 @@ navbarMenu.addEventListener('click', (event) => {
     return;
   } else {
     console.log(link);
-    const str = link.split('#');
-    let element = document.getElementById(str[1]);
-    console.log(element);
-    element.scrollIntoView({ behavior: 'smooth' });
+    // const str = link.split('#');
+    // let element = document.getElementById(str[1]);
+    // querySelector로 어떠한 형태의 선택자도 받아올 수 있다!!!
+    scrollIntoView(link);
   }
 });
+
+// Handle click on "contact me" button on home
+const contactMe = document.querySelector('.home__contact');
+contactMe.addEventListener('click', () => {
+  scrollIntoView('#contact');
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
