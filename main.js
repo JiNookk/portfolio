@@ -46,20 +46,66 @@ contactMe.addEventListener('click', () => {
   scrollIntoView('#contact');
 });
 
-// 중복되는 부분 발생!! >> 메서드로 추출하자
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-}
-
 // Make home slowly fade to transparent as the window scroll down
 // 자식만 투명하게 만드려면 ? >> html에서 container하나 더만들면 되지.
 const homeCon = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 
 const scrollHomeY = document.addEventListener('scroll', () => {
-  console.log(homeHeight);
-  console.log(window.scrollY);
-
+  // console.log(homeHeight);
+  // console.log(window.scrollY);
+  // 이런식으로 html 스타일을 직접 줄 수 있다.
   homeCon.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+// Make arrow button to move topside
+// 버튼태그를 이용하면 자식태그가 자동으로 중심정렬이 이루어진다.
+
+const icon = document.querySelector('.arrow__up');
+icon.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
+
+const arrowScroll = document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    icon.classList.add('visible');
+  } else {
+    icon.classList.remove('visible');
+  }
+});
+
+// Projects
+// 누를 버튼에 불러올 값을 html에 dataset 처리한다!
+// 컨테이너를 쿼리셀렉터로 가져와야 한다.
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+// project클래스에 해당되는 모든 녀석들을 변수에 할당
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+  // 이제 undefined값을 가진 아이콘을 눌러도 그 부모값의 filter를
+  // 가져오기 때문에 문제해결
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  // 이부분에 브레이크 포인트를 걸어서 부모노드에 대한 정보를 얻을 수 있다.
+  if (filter == null) {
+    return;
+  }
+
+  // projects라는 배열을 받아서 출력
+  projects.forEach((project) => {
+    // foreach가 돌면서 조건에 맞지않는 녀석을 invisible로 만듦
+    console.log(project.dataset.type);
+    if (filter === '*' || filter === project.dataset.type) {
+      project.classList.remove('invisible');
+    } else {
+      project.classList.add('invisible');
+    }
+  });
+});
+
+// 클릭 > 프론트엔드가 선택( 선택자 ) > 선택자만 디스플레이 출력
+
+// 중복되는 부분 발생!! >> 메서드로 추출하자
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}

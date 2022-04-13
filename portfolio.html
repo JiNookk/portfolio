@@ -38,6 +38,7 @@
         <i class="fa-solid fa-bars"></i>
       </button>
     </nav>
+
     <!-- Home -->
     <section id="home" class="section">
       <div class="home__container">
@@ -60,6 +61,7 @@
         </div>
       </div>
     </section>
+
     <!-- About -->
     <section id="about" class="section">
       <!-- <div class="section__container"> -->
@@ -228,22 +230,22 @@
         <h1>My work</h1>
         <h4>Projects</h4>
         <div class="work__categories">
-          <button class="category__btn active">
+          <button class="category__btn active" data-filter="*">
             All <span class="category__count">8</span>
           </button>
-          <button class="category__btn">
+          <button class="category__btn" data-filter="frontend">
             Front-end <span class="category__count">3</span>
           </button>
-          <button class="category__btn">
+          <button class="category__btn" data-filter="backend">
             Back-end <span class="category__count">3</span>
           </button>
-          <button class="category__btn">
+          <button class="category__btn" data-filter="mobile">
             Mobile <span class="category__count">2</span>
           </button>
         </div>
         <div class="work__projects">
           <!-- 이미지크기 조정 : image reize, png compression -->
-          <a href="" class="project" target="blank">
+          <a href="" class="project" target="blank" data-type="frontend">
             <img
               src="imgs/works/project1.png"
               alt="Youtube"
@@ -258,6 +260,7 @@
             href="https://github.com/jjing970828/portfolio"
             class="project"
             target="blank"
+            data-type="frontend"
           >
             <img
               src="imgs/works/project2.png"
@@ -273,6 +276,7 @@
             href="https://github.com/jjing970828/portfolio"
             class="project"
             target="blank"
+            data-type="frontend"
           >
             <img
               src="imgs/works/project3.png"
@@ -288,6 +292,7 @@
             href="https://github.com/jjing970828/portfolio"
             class="project"
             target="blank"
+            data-type="backend"
           >
             <img
               src="imgs/works/project4.png"
@@ -303,6 +308,7 @@
             href="https://github.com/jjing970828/portfolio"
             class="project"
             target="blank"
+            data-type="backend"
           >
             <img
               src="imgs/works/project5.png"
@@ -318,6 +324,7 @@
             href="https://github.com/jjing970828/portfolio"
             class="project"
             target="blank"
+            data-type="backend"
           >
             <img
               src="imgs/works/project6.png"
@@ -333,6 +340,7 @@
             href="https://github.com/jjing970828/portfolio"
             class="project"
             target="blank"
+            data-type="mobile"
           >
             <img
               src="imgs/works/project7.png"
@@ -348,6 +356,7 @@
             href="https://github.com/jjing970828/portfolio"
             class="project"
             target="blank"
+            data-type="mobile"
           >
             <img
               src="imgs/works/project8.png"
@@ -419,5 +428,8 @@
         2020 Dream Coding Wooks - All right reserved
       </p>
     </section>
+    <button class="arrow__up">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
   </body>
 </html>

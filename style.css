@@ -413,6 +413,9 @@ flex : 수평
   background-color: var(--color-light-white);
 }
 
+.project.invisible {
+  display: none;
+}
 /* 부모박스의 크기를 넘지않도록 100%할당 */
 .project__img {
   max-width: 100%;
@@ -529,6 +532,37 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
 .contact__links i:hover {
   transform: rotate(-30deg) scale(1.2);
   color: var(--color-yellow);
+}
+
+/* arrow up */
+
+/* 아이콘 말고 위 클래스에서 폰트사이즈랑 컬러를 줘도 된다! */
+.arrow__up {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: var(--font-large);
+  color: var(--color-white);
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  /* border: 1px solid var(--color-white); 굳이 필요없다. */
+
+  color: var(--color-white);
+  cursor: pointer;
+  z-index: 1;
+  transition: all var(--animation-duration) ease;
+}
+
+/* display : none -> block(기본값) 으로 변경해주어야 
+    반응불가능한 녀석에서 반응 가능한 녀석으로 변한다. */
+
+.arrow__up.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* 우리가 화면을 최대로 키웠을 때 박스가 끝까지 늘어나는 것을 멈추려면?
