@@ -46,7 +46,20 @@ contactMe.addEventListener('click', () => {
   scrollIntoView('#contact');
 });
 
+// 중복되는 부분 발생!! >> 메서드로 추출하자
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
+
+// Make home slowly fade to transparent as the window scroll down
+// 자식만 투명하게 만드려면 ? >> html에서 container하나 더만들면 되지.
+const homeCon = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+
+const scrollHomeY = document.addEventListener('scroll', () => {
+  console.log(homeHeight);
+  console.log(window.scrollY);
+
+  homeCon.style.opacity = 1 - window.scrollY / homeHeight;
+});

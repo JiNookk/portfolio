@@ -109,6 +109,8 @@ button {
   z-index: 1;
 }
 
+/* 예기지않은 property가 발생하면 css > html > JS를 찾아볼것.
+    이번에 밑에 붙은 JS 내용때문에 1시간 넘게 허비했다. */
 #navbar.navbar--dark {
   background-color: var(--color-pink);
   padding: 8px;
@@ -162,6 +164,10 @@ button {
   padding-top: 100px;
   /* 아이템이 수직으로 차례대로 깔리니깐 수평으로 중심을 맞추기 위해 align-items을 쓴다.; */
   text-align: center;
+}
+
+#h {
+  opacity: 0;
 }
 
 .home__avatar {
