@@ -458,17 +458,18 @@ flex : 수평
 /* 클래스 지정을 하지 않은 태그도 부모가 클래스로 묶여있으면
     이런 식으로 지정이 가능하다! */
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
-h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h3:after {
+/* h3태그 다음에 간단한 작업을 하고 싶을 때  */
+.project__description h3:after {
   content: '';
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
   background-color: var(--color-dark-white);
 }
@@ -591,6 +592,7 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-pink);
   }
 
   /* 중앙으로 왜 안올까?
@@ -603,6 +605,10 @@ h3태그 다음에 간단한 작업을 하고 싶을 때 .project__description h
     flex-direction: column;
     text-align: center;
     display: none;
+  }
+
+  .navbar__menu.clicked {
+    display: block;
   }
 
   .about__majors {

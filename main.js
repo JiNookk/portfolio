@@ -37,6 +37,7 @@ navbarMenu.addEventListener('click', (event) => {
     // let element = document.getElementById(str[1]);
     // querySelector로 어떠한 형태의 선택자도 받아올 수 있다!!!
     scrollIntoView(link);
+    navbarMenu.classList.remove('clicked');
   }
 
   navbarMenuItem.forEach((navbarItem) => {
@@ -46,6 +47,12 @@ navbarMenu.addEventListener('click', (event) => {
       navbarItem.classList.remove('active');
     }
   });
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('clicked');
 });
 
 // Handle click on "contact me" button on home
