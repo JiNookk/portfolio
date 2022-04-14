@@ -17,7 +17,7 @@ document.addEventListener('scroll', () => {
 
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
-
+const navbarMenuItem = document.querySelectorAll('.navbar__menu__item');
 // navbarMenu에서 클릭이 발생하면 콜백실행
 // 클릭이 발생했을 때 그 대상을 이벤트에 담는다.
 // .target을 이용해 event객체의 내용을 받아올 수 있다.
@@ -38,6 +38,14 @@ navbarMenu.addEventListener('click', (event) => {
     // querySelector로 어떠한 형태의 선택자도 받아올 수 있다!!!
     scrollIntoView(link);
   }
+
+  navbarMenuItem.forEach((navbarItem) => {
+    if (link === navbarItem.dataset.link) {
+      navbarItem.classList.add('active');
+    } else {
+      navbarItem.classList.remove('active');
+    }
+  });
 });
 
 // Handle click on "contact me" button on home
@@ -74,15 +82,19 @@ const arrowScroll = document.addEventListener('scroll', () => {
   }
 });
 
+// 22.04.14
+
 // Projects
 // 누를 버튼에 불러올 값을 html에 dataset 처리한다!
 // 컨테이너를 쿼리셀렉터로 가져와야 한다.
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
-// project클래스에 해당되는 모든 녀석들을 변수에 할당
+// project클래스에 해당되는 모든 녀석들을 변수에 할당 : forEach쓸때는 무조건 요놈으로 받아와야한다.
 const projects = document.querySelectorAll('.project');
+const categoryBtn = document.querySelectorAll('.category__btn');
+
 workBtnContainer.addEventListener('click', (e) => {
-  // 이제 undefined값을 가진 아이콘을 눌러도 그 부모값의 filter를
+  // undefined값을 가진 아이콘을 눌러도 그 부모값의 filter를
   // 가져오기 때문에 문제해결
   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
   // 이부분에 브레이크 포인트를 걸어서 부모노드에 대한 정보를 얻을 수 있다.
@@ -91,11 +103,20 @@ workBtnContainer.addEventListener('click', (e) => {
   }
   projectContainer.classList.add('anim-out');
 
+  categoryBtn.forEach((workBtn) => {
+    if (filter === workBtn.dataset.filter) {
+      workBtn.classList.add('active');
+    } else {
+      workBtn.classList.remove('active');
+    }
+  });
+
   setTimeout(() => {
     // projects라는 배열을 받아서 출력
     projects.forEach((project) => {
       // foreach가 돌면서 조건에 맞지않는 녀석을 invisible로 만듦
       console.log(project.dataset.type);
+      console.log(filter);
       if (filter === '*' || filter === project.dataset.type) {
         project.classList.remove('invisible');
       } else {
@@ -106,9 +127,13 @@ workBtnContainer.addEventListener('click', (e) => {
   }, 300);
 });
 
-// 22.04.14
+// Project button final touch
 
+// 눌렀을때 액티브 옮겨가기, navbar border 옮기기
+// 눌렀을떄 액티브 클래스 추가(classlist), 다른놈들 액티브 해제(foreach)
 // transform 요소 다시공부할것!!
+// hover시 border 주의사항 : 없던 border가 생기므로 사이즈가 늘어났다 줄어났다함.
+//   >> 평소에도 transparent로 border를 주면 된다!!
 
 // 중복되는 부분 발생!! >> 메서드로 추출하자
 function scrollIntoView(selector) {

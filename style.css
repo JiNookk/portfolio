@@ -132,17 +132,18 @@ button {
   /* pointer : 호버되었을때 커서가 손모양으로 변함 */
   cursor: pointer;
   color: var(--color-white);
+  border: 1px solid transparent;
+  border-radius: var(--size-border-radius);
 }
 
 /* var쓸때 띄어쓰기 조심!!!! */
 .navbar__menu__item.active {
-  border: 1px solid var(--color-white);
   border-radius: var(--size-border-radius);
 }
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
-  border-radius: var(--size-border-radius);
+  border-color: var(--color-white);
 }
 
 .navbar__toggle-btn {
