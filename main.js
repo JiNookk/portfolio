@@ -89,20 +89,26 @@ workBtnContainer.addEventListener('click', (e) => {
   if (filter == null) {
     return;
   }
+  projectContainer.classList.add('anim-out');
 
-  // projects라는 배열을 받아서 출력
-  projects.forEach((project) => {
-    // foreach가 돌면서 조건에 맞지않는 녀석을 invisible로 만듦
-    console.log(project.dataset.type);
-    if (filter === '*' || filter === project.dataset.type) {
-      project.classList.remove('invisible');
-    } else {
-      project.classList.add('invisible');
-    }
-  });
+  setTimeout(() => {
+    // projects라는 배열을 받아서 출력
+    projects.forEach((project) => {
+      // foreach가 돌면서 조건에 맞지않는 녀석을 invisible로 만듦
+      console.log(project.dataset.type);
+      if (filter === '*' || filter === project.dataset.type) {
+        project.classList.remove('invisible');
+      } else {
+        project.classList.add('invisible');
+      }
+    });
+    projectContainer.classList.remove('anim-out');
+  }, 300);
 });
 
-// 클릭 > 프론트엔드가 선택( 선택자 ) > 선택자만 디스플레이 출력
+// 22.04.14
+
+// transform 요소 다시공부할것!!
 
 // 중복되는 부분 발생!! >> 메서드로 추출하자
 function scrollIntoView(selector) {
