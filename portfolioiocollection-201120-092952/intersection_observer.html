@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 80px auto;
+        background-color: plum;
+        transition: 2500ms;
+      }
+
+      .box.active {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <div class="box">16</div>
+    <div class="box">17</div>
+    <div class="box">18</div>
+    <div class="box">19</div>
+    <div class="box">20</div>
+
+    <script>
+      const boxes = document.querySelectorAll('.box');
+
+      const options = {
+        root: null, //기본값으로 viewport(브라우저에 보여지는 윈도우 부분)
+        rootMargin: '0px', //viewport 바깥으로 감지영역을 넓힐때
+        threshold: 0.2, // 콜백함수를 언제 실행할지 정하는 기준. 0 > 요소 보이면 바로 실행, 1 > 요소 다 보이면 실행
+      };
+
+      // 우리가 원하는 요소가 특정한 영역에 들어왔을 때
+      // 알려주는 우리의 콜백을 호출하는 관찰자이다.
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      }, options);
+
+      // 얘는 뭐하는 구문이지?
+      boxes.forEach((box) => observer.observe(box));
+    </script>
+  </body>
+</html>
